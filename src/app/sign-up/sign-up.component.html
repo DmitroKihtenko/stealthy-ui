@@ -1,0 +1,41 @@
+<div class="col">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <h3 class="my-1 w-100 text-center text-truncate">Sign-up an account</h3>
+    </div>
+  </div>
+  <form (submit)="onSignUp()">
+    <div class="row">
+      <div class="col my-1">
+        <div class="input-group mb-2 input-group-lg">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-opposite ml-1 my-1">
+              <i class="fa fa-user"></i>
+            </div>
+          </div>
+          <input type="text" [(ngModel)]="username" name="username" class="form-control bg-opposite mr-1 my-1" placeholder="Your username" value="Previous username"/>
+        </div>
+        <div class="input-group mb-2 input-group-lg"><div class="input-group-prepend">
+          <div class="input-group-text bg-opposite ml-1 my-1">
+            <i class="fa fa-lock"></i>
+          </div>
+        </div>
+          <input type="password" [(ngModel)]="password" name="password" class="form-control bg-opposite mr-1 my-1" placeholder="Your password" value="prev pass"/>
+        </div>
+      </div>
+    </div>
+    <app-error-view></app-error-view>
+    <div class="row justify-content-md-center">
+      <div class="col my-1">
+        <button type="submit" class="w-100 btn btn-diluted btn-lg">
+          <i class="fa fa-floppy-o"></i> Register
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="row justify-content-md-center">
+    <div class="col my-1">
+      Already registered? Go to sign-in page
+    </div>
+  </div>
+</div>

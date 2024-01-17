@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  ui-server:
+    image: stealthy-ui:latest
+    build:
+      context: .
+      target: application
+    ports:
+      - "80:80"

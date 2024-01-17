@@ -1,0 +1,12 @@
+<div class="row" *ngIf="!hidden">
+  <div class="col my-1">
+    <div class="alert alert-danger" role="alert">
+      <strong *ngFor="let error of errorMessages; last as isLast" class="text-wrap">
+        {{ error }}
+        <ng-container *ngIf="!isLast">
+          <br/>
+        </ng-container>
+      </strong>
+    </div>
+  </div>
+</div>

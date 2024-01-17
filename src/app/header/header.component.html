@@ -1,0 +1,27 @@
+<header class="text-center bg-diluted">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-12">
+        <h2>Stealthy</h2>
+      </div>
+      <div class="col-6 px-0 py-1 d-flex">
+        <app-user-menu></app-user-menu>
+      </div>
+      <div class="col-2 px-1 py-1 d-flex align-items-center">
+        <button (click)="toSignUp()" class="btn btn-outline-main btn-block btn-sm text-truncate">
+          Sign-up
+        </button>
+      </div>
+      <div class="col-2 px-1 py-1 d-flex align-items-center">
+        <button (click)="toSignIn()" class="btn btn-outline-main btn-block btn-sm text-truncate">
+          Sign-in
+        </button>
+      </div>
+      <div class="col-2 px-1 py-1 d-flex align-items-center">
+        <button (click)="toDownload()" class="btn btn-outline-main btn-block btn-sm text-truncate">
+          Download
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,27 @@
+<div class="col">
+  <div class="row justify-content-md-center">
+    <h3 class="my-1 w-100 text-center text-truncate">Download file by id</h3>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col my-1">
+        <div class="input-group mb-2 input-group-lg">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-opposite ml-1 my-1">
+              <i class="fa fa-file"></i>
+            </div>
+          </div>
+          <input type="text" [(ngModel)]="fileId" name="fileId" class="form-control bg-opposite mr-1 my-1" placeholder="File id"/>
+        </div>
+      </div>
+    </div>
+    <app-error-view></app-error-view>
+    <div class="row justify-content-md-center">
+      <div class="col my-1">
+        <a (click)="downloadFile()" class="mb-1 w-100 btn btn-diluted btn-lg">
+          <i class="fa fa-download"></i> Download
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
