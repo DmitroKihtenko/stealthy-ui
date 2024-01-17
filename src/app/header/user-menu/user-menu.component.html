@@ -1,0 +1,13 @@
+<div *ngIf="username != null" class="btn-group dropright w-25 mr-auto">
+  <button class="btn btn-outline-main btn-block btn-sm dropdown-toggle text-truncate mx-1 my-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-user-circle"></i> {{ username }}
+  </button>
+  <div class="dropdown-menu bg-opposite" aria-labelledby="userMenu">
+    <button (click)="logout()" class="dropdown-item btn-opposite">
+      <i class="fa fa-sign-out"></i> Logout
+    </button>
+    <button (click)="space()" class="dropdown-item btn-opposite">
+      <i class="fa fa-laptop"></i> Your space
+    </button>
+  </div>
+</div>

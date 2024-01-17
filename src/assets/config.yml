@@ -1,0 +1,9 @@
+backend:
+  apiUrl: "http://localhost:8000/backend/v1/"
+
+institution:
+  name: "Stealthy"
+  description: "Web application for secure sharing sensitive information"
+
+pagination:
+  perPageLimit: 6

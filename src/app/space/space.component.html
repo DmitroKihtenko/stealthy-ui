@@ -1,0 +1,69 @@
+<div class="col">
+  <div class="row justify-content-md-center">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <h3 class="mx-1 my-1 w-100 text-center text-truncate">Manage your files</h3>
+        </div>
+      </div>
+      <app-file-upload></app-file-upload>
+      <div class="row">
+        <div class="col mr-1 my-1">
+          <button (click)="onPreviousPage()" class="w-100 btn btn-diluted btn-lg" [disabled]="isPreviousPageDisabled()">
+            <i class="fa fa-backward"></i> Previous page
+          </button>
+        </div>
+        <div class="col mr-1 my-1">
+          <div class="row h-100 align-items-center">
+            <div class="col">
+              <h4 class="text-center text-lg mx-0 my-0 px-0 py-0">
+                <div *ngIf="total; else filesNotLoadedText">Total {{ total }} files</div>
+                <ng-template #filesNotLoadedText>No files data</ng-template>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col my-1">
+          <button (click)="onNextPage()" class="w-100 btn btn-diluted btn-lg" [disabled]="isNextPageDisabled()">
+            Next page <i class="fa fa-forward"></i>
+          </button>
+        </div>
+      </div>
+      <app-error-view></app-error-view>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let metadata of metadataList" class="col-4">
+      <div class="card bg-opposite my-2 text text-left">
+        <div class="card-body">
+          <h4 class="card-title text-uppercase font-weight-bold mx-1 my-1">
+            {{ getFileExtension(metadata['name']) }}
+          </h4>
+          <p class="card-subtitle mx-1 my-1 text-truncate">
+            {{ metadata['name'] }}
+          </p>
+          <p class="mx-1 my-1">
+            <small class="card-text text-truncate">
+              <p class="text-truncate">{{ metadata['file_id'] }}</p>
+              Added: {{ timestampToDatetime(metadata['creation']) }}<br>
+              Expires: {{ timestampToDatetime(metadata['expiration']) }}
+            </small>
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn=group mx-1 my-1">
+              <button ngxClipboard [cbContent]="getFileLink(metadata['file_id'])" class="btn-outline-diluted" type="button">
+                <i class="fa fa-copy"></i>
+              </button>
+              <button (click)="toFileDownload(metadata['file_id'])" class="btn-outline-diluted">
+                <i class="fa fa-download"></i>
+              </button>
+            </div>
+            <p class="mx-1 my-1 text-wrap">
+              ~{{ getFileSizeRounded(metadata['size']) }} KB
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

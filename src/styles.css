@@ -1,0 +1,172 @@
+html, body {
+  height: 100%;
+}
+
+:root {
+  --main-color: #363636;
+  --diluted-color: #424242;
+  --opposite-color: #C2C2C2;
+}
+
+.bg-diluted, button.btn-diluted, a.btn-diluted {
+  background-color: var(--diluted-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-diluted:hover, a.btn-diluted:hover {
+  background-color: var(--main-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+.bg-diluted:focus, button.btn-diluted:focus, a.btn-diluted:focus {
+  background-color: var(--diluted-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+  box-shadow: 0 0 0 0.2rem var(--opposite-color)
+}
+
+button.btn-outline-diluted, abtn-outline-diluted {
+  background-color: transparent;
+  border-color: var(--diluted-color);
+  color: var(--diluted-color);
+}
+
+button.btn-outline-diluted:hover, a.btn-outline-diluted:hover {
+  background-color: var(--diluted-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-outline-diluted:focus, a.btn-outline-diluted:focus {
+  background-color: transparent;
+  border-color: var(--diluted-color);
+  color: var(--diluted-color);
+  box-shadow: 0 0 0 0.2rem var(--diluted-color);
+}
+
+.bg-main, button.btn-main, a.btn-main {
+  background-color: var(--main-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-main:hover, a.btn-main:hover {
+  background-color: var(--opposite-color);
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+button.bg-main:hover, button.btn-main:focus, a.btn-main:focus {
+  background-color: var(--main-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+  box-shadow: 0 0 0 0.2rem var(--opposite-color)
+}
+
+button.btn-outline-main, a.btn-outline-main {
+  background-color: transparent;
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-outline-main:hover, a.btn-outline-main:hover {
+  background-color: var(--main-color);
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-outline-main:focus, a.btn-outline-main:focus {
+  background-color: transparent;
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+  box-shadow: 0 0 0 0.2rem var(--opposite-color)
+}
+
+.bg-opposite, button.btn-opposite, a.btn-opposite {
+  background-color: var(--opposite-color);
+  border-color: var(--opposite-color);
+  color: var(--main-color);
+}
+
+button.btn-opposite:hover, a.btn-opposite:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: var(--opposite-color);
+}
+
+.bg-opposite:focus, button.btn-opposite:focus, a.btn-opposite:focus {
+  background-color: var(--opposite-color);
+  border-color: transparent;
+  color: var(--main-color);
+  box-shadow: 0 0 0 0.2rem var(--opposite-color)
+}
+
+button.btn-outline-opposite, a.btn-outline-opposite {
+  background-color: transparent;
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+}
+
+button.btn-outline-opposite:hover, a.btn-outline-opposite:hover {
+  background-color: var(--opposite-color);
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+button.btn-outline-opposite:focus, a.btn-outline-opposite:focus {
+  background-color: transparent;
+  border-color: var(--opposite-color);
+  color: var(--opposite-color);
+  box-shadow: 0 0 0 0.2rem var(--opposite-color)
+}
+
+label.custom-file-label::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: block;
+  height: calc(calc(2.25rem + 2px) - 1px * 2);
+  padding: 6px 0 0;
+  line-height: 1.5;
+  color: var(--main-color);
+  content: "";
+  background-color: var(--opposite-color);
+  border-left: 1px solid var(--opposite-color);
+  border-radius: 0 .25rem .25rem 0;
+}
+
+.dh-100 {
+  height: 100vh;
+}
+
+.dh-75 {
+  height: 75vh;
+}
+
+.dh-50 {
+  height: 50vh;
+}
+
+.dh-25 {
+  height: 25vh;
+}
+
+.scroll-x {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.scroll {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+

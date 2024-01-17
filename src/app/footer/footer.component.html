@@ -1,0 +1,15 @@
+<footer class="flex-shrink-0 mt-auto bg-diluted text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 font-weight-light">
+        {{ institutionConfig.name }}
+      </div>
+      <div class="col-12 font-weight-light">
+        {{ institutionConfig.description }}
+      </div>
+      <div class="col-12" *ngIf="institutionConfig.link != null">
+        <a class="btn btn-sm btn-outline-main mx-1 my-1" href="{{ institutionConfig.link }}">Visit our website</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,9 @@
+backend:
+  apiUrl: "https://stealthy-backend/backend/v1/"
+
+institution:
+  name: "Stealthy"
+  description: "Web application for secure sharing sensitive information"
+
+pagination:
+  perPageLimit: 6
