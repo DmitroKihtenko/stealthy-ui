@@ -138,35 +138,3 @@ label.custom-file-label::after {
   border-left: 1px solid var(--opposite-color);
   border-radius: 0 .25rem .25rem 0;
 }
-
-.dh-100 {
-  height: 100vh;
-}
-
-.dh-75 {
-  height: 75vh;
-}
-
-.dh-50 {
-  height: 50vh;
-}
-
-.dh-25 {
-  height: 25vh;
-}
-
-.scroll-x {
-  overflow-y: hidden;
-  overflow-x: scroll;
-}
-
-.scroll-y {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.scroll {
-  overflow-x: scroll;
-  overflow-y: scroll;
-}
-

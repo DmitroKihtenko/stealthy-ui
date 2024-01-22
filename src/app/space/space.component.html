@@ -44,17 +44,17 @@
           </p>
           <p class="mx-1 my-1">
             <small class="card-text text-truncate">
-              <p class="text-truncate">{{ metadata['file_id'] }}</p>
+              <p class="text-truncate">{{ metadata['identifier'] }}</p>
               Added: {{ timestampToDatetime(metadata['creation']) }}<br>
               Expires: {{ timestampToDatetime(metadata['expiration']) }}
             </small>
           </p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn=group mx-1 my-1">
-              <button ngxClipboard [cbContent]="getFileLink(metadata['file_id'])" class="btn-outline-diluted" type="button">
+              <button ngxClipboard [cbContent]="getFileLink(metadata['identifier'])" class="btn-outline-diluted" type="button">
                 <i class="fa fa-copy"></i>
               </button>
-              <button (click)="toFileDownload(metadata['file_id'])" class="btn-outline-diluted">
+              <button (click)="toFileDownload(metadata['identifier'])" class="btn-outline-diluted">
                 <i class="fa fa-download"></i>
               </button>
             </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {ConfigService, InstitutionConfig} from "../config.service";
+import {ConfigService} from "../config.service";
 import {NgIf} from "@angular/common";
+import {InstitutionConfig} from "../../config";
 
 @Component({
   selector: 'app-footer',

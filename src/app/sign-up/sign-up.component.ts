@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {UsersService} from "../users.service";
 import {Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import {ConfigService} from "../config.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -24,12 +25,15 @@ export class SignUpComponent {
 
   constructor(
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+    private configService: ConfigService
   ) {}
 
   ngOnInit() {
     this.loginSubscription = this.usersService.loginRequest.subscribe(
-      {next: value => this.router.navigateByUrl('/space')}
+      {next: value => this.router.navigateByUrl(
+          this.configService.config.routing.baseUrl + '/space'
+        )}
     );
 
     this.addUserSubscription = this.usersService.addUserRequest.subscribe(

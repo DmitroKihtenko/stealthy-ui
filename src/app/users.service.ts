@@ -79,7 +79,9 @@ export class UsersService {
       this.errorsService.setErrors(["You are not logged in"]);
       this.errorsService.setHidden(false);
       this.errorsService.showOnInit = true;
-      this.router.navigateByUrl('/sign-in');
+      this.router.navigateByUrl(
+        this.configService.config.routing.baseUrl + '/sign-in'
+      );
     }
     return token;
   }

@@ -1,5 +1,5 @@
 backend:
-  apiUrl: "http://localhost:8000/backend/v1/"
+  apiUrl: "http://192.168.0.101:8000/backend/v1/"
 
 institution:
   name: "Stealthy"
@@ -7,3 +7,6 @@ institution:
 
 pagination:
   perPageLimit: 6
+
+routing:
+  baseUrl: "stealthy/ui"
