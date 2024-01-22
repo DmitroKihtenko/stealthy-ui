@@ -3,6 +3,7 @@ import {UsersService} from "../../users.service";
 import {NavigationEnd, Router} from "@angular/router";
 import {NgIf} from "@angular/common";
 import {filter, Subscription} from "rxjs";
+import {ConfigService} from "../../config.service";
 
 @Component({
   selector: 'app-user-menu',
@@ -22,7 +23,8 @@ export class UserMenuComponent {
 
   constructor(
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+    private configService: ConfigService
   ) { }
 
   ngOnInit() {
@@ -53,11 +55,15 @@ export class UserMenuComponent {
   }
 
   space() {
-    this.router.navigateByUrl('/space');
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl + '/space'
+    );
   }
 
   logout() {
     this.usersService.logout();
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl
+    );
   }
 }

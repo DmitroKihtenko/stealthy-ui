@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {UserMenuComponent} from "./user-menu/user-menu.component";
+import {ConfigService} from "../config.service";
 
 @Component({
   selector: 'app-header',
@@ -11,17 +12,26 @@ import {UserMenuComponent} from "./user-menu/user-menu.component";
   ]
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private configService: ConfigService
+  ) {}
 
   toSignIn() {
-    this.router.navigateByUrl('/sign-in');
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl + '/sign-in'
+    );
   }
 
   toSignUp() {
-    this.router.navigateByUrl('/sign-up');
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl + '/sign-up'
+    );
   }
 
   toDownload() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl
+    );
   }
 }

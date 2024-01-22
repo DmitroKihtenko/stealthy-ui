@@ -61,7 +61,9 @@ export class FilesService {
         } catch (anotherError) {
           this.errorsService.setErrors(['Invalid server response']);
           this.errorsService.setHidden(false);
-          this.router.navigateByUrl('/error');
+          this.router.navigateByUrl(
+            this.configService.config.routing.baseUrl + '/error'
+          );
         }
         return throwError(() => error);
       })

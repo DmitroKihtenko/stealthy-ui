@@ -8,7 +8,7 @@ import {ConfigService} from "../config.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {DateTimeFormatter, LocalDateTime, ZoneOffset} from "@js-joda/core";
 import {ClipboardModule} from "ngx-clipboard";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -32,6 +32,8 @@ export class SpaceComponent {
   metadataList: any[] = [];
   getMetadataSubscription: Subscription | null = null;
   uploadSubscription: Subscription | null = null;
+  navigationSubscription: Subscription | null = null;
+  intervalId: number | null = null;
 
   constructor(
     private filesService: FilesService,
@@ -61,15 +63,33 @@ export class SpaceComponent {
       }}
     )
 
+    this.navigationSubscription = this.router.events.subscribe((next: any) => {
+      if (next instanceof NavigationEnd) {
+        this.updateMetadataList()
+      }
+    });
+
     this.updateMetadataList();
+
+    this.intervalId = setInterval(
+      () => {
+        this.updateMetadataList();
+      }, 15000
+    )
   }
 
-  onOnDestroy() {
+  ngOnDestroy() {
     if (this.uploadSubscription) {
       this.uploadSubscription.unsubscribe();
     }
     if (this.getMetadataSubscription) {
       this.getMetadataSubscription.unsubscribe();
+    }
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
     }
   }
 
@@ -135,11 +155,17 @@ export class SpaceComponent {
   }
 
   getFileLink(fileId: string): string {
-    return window.location.protocol + "//" +
-      window.location.host + "/download?file-id=" + fileId;
+    let baseUrl = this.configService.config.routing.baseUrl;
+    if (baseUrl != '') {
+      baseUrl = '/' + baseUrl;
+    }
+    return window.location.protocol + '//' +
+      window.location.host + baseUrl + '?file-id=' + fileId;
   }
 
   toFileDownload(fileId: string) {
-    this.router.navigateByUrl("/?file-id=" + fileId);
+    this.router.navigateByUrl(
+      this.configService.config.routing.baseUrl + '?file-id=' + fileId
+    );
   }
 }

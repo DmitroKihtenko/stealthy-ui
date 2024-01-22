@@ -7,3 +7,6 @@ institution:
 
 pagination:
   perPageLimit: 6
+
+routing:
+  baseUrl: "ui"
