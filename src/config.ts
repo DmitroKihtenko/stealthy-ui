@@ -1,6 +1,6 @@
-import * as yaml from "js-yaml";
+import * as yaml from 'js-yaml';
 
-const CONFIG_FILE = "config.yaml"
+const CONFIG_FILE = 'config.yaml'
 
 export class BackendConfig {
   apiUrl: string = 'http://localhost/';
@@ -20,7 +20,7 @@ export class PaginationConfig {
 
 
 export class RoutingConfig {
-  baseUrl: string = ""
+  baseUrl: string = ''
 }
 
 

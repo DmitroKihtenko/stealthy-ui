@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {lastValueFrom} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {lastValueFrom} from 'rxjs';
 import * as yaml from 'js-yaml';
-import {Config} from "../config";
+import {Config} from '../config';
 
 
 @Injectable({

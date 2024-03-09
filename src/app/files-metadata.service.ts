@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import {catchError, Subject} from "rxjs";
+import {catchError, Subject} from 'rxjs';
 import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
   HttpParams
-} from "@angular/common/http";
-import {ConfigService} from "./config.service";
-import {ErrorsService} from "./errors.service";
-import {UsersService} from "./users.service";
+} from '@angular/common/http';
+import {ConfigService} from './config.service';
+import {ErrorsService} from './errors.service';
+import {UsersService} from './users.service';
 
 @Injectable({
   providedIn: 'root'

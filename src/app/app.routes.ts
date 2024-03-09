@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import {DownloadComponent} from "./download/download.component";
-import {SignUpComponent} from "./sign-up/sign-up.component";
-import {SignInComponent} from "./sign-in/sign-in.component";
-import {SpaceComponent} from "./space/space.component";
-import {ErrorComponent} from "./error/error.component";
-import {Config} from "../config";
+import {DownloadComponent} from './download/download.component';
+import {SignUpComponent} from './sign-up/sign-up.component';
+import {SignInComponent} from './sign-in/sign-in.component';
+import {SpaceComponent} from './space/space.component';
+import {ErrorComponent} from './error/error.component';
+import {Config} from '../config';
 
 
 export function createAppRoutes(config: Config | null): Routes {

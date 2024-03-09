@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {ConfigService} from "./config.service";
-import {ErrorsService} from "./errors.service";
-import {Router} from "@angular/router";
-import {catchError, Subject, throwError} from "rxjs";
-import {UsersService} from "./users.service";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {ConfigService} from './config.service';
+import {ErrorsService} from './errors.service';
+import {Router} from '@angular/router';
+import {catchError, Subject, throwError} from 'rxjs';
+import {UsersService} from './users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +47,7 @@ export class FilesService {
 
   downloadFile(fileId: string) {
     this.httpClient.get(
-      this.configService.config.backend.apiUrl + "files/" + fileId,
+      this.configService.config.backend.apiUrl + 'files/' + fileId,
       { observe: 'response', responseType: 'arraybuffer' }
     ).pipe(
       catchError((error: HttpErrorResponse) => {

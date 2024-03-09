@@ -17,7 +17,7 @@ Installed Docker and Docker-compose plugin
 
 ### How to up and run
 #### Configure application
-1. Copy file: 'config.yaml.example' to 'src/app/assets/config.yaml'.
+1. Copy file: `config.yaml.example` to `src/app/assets/config.yaml`.
 2. Make changes you need in configuration file.
 
 #### Build docker images
@@ -29,4 +29,10 @@ docker compose up
 Stop and remove containers after application use
 ```bash
 docker compose down
+```
+
+### How to run application tests
+```shell
+docker compose -f docker-compose-test.yml up \
+  && docker compose -f docker-compose-test.yml down
 ```

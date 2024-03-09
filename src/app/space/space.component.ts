@@ -33,7 +33,7 @@ export class SpaceComponent {
   getMetadataSubscription: Subscription | null = null;
   uploadSubscription: Subscription | null = null;
   navigationSubscription: Subscription | null = null;
-  intervalId: number | null = null;
+  intervalId: any | null = null;
 
   constructor(
     private filesService: FilesService,
