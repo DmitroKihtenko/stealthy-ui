@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Subject} from "rxjs";
-import {ConfigService} from "./config.service";
-import {ErrorsService} from "./errors.service";
-import {Router} from "@angular/router";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {catchError, Subject} from 'rxjs';
+import {ConfigService} from './config.service';
+import {ErrorsService} from './errors.service';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -32,12 +32,11 @@ export class UsersService {
     this.http.post(
       this.configService.config.backend.apiUrl + 'login',
       {
-        "username": username,
-        "password": password,
+        'username': username,
+        'password': password,
       },
     ).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.log(error.error);
         return this.errorsService.handleError(
           error, error.error, error.status
         )}
@@ -55,8 +54,8 @@ export class UsersService {
     this.http.post(
       this.configService.config.backend.apiUrl + 'users',
       {
-        "username": username,
-        "password": password,
+        'username': username,
+        'password': password,
       },
     ).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -76,7 +75,7 @@ export class UsersService {
   getTokenWithError(): string | null {
     let token = this.getToken();
     if (token == null) {
-      this.errorsService.setErrors(["You are not logged in"]);
+      this.errorsService.setErrors(['You are not logged in']);
       this.errorsService.setHidden(false);
       this.errorsService.showOnInit = true;
       this.router.navigateByUrl(

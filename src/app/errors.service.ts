@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Observable, Subject, throwError} from "rxjs";
-import {Router} from "@angular/router";
-import {ConfigService} from "./config.service";
+import {Observable, Subject, throwError} from 'rxjs';
+import {Router} from '@angular/router';
+import {ConfigService} from './config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +59,7 @@ export class ErrorsService {
       try {
         result.push(response.summary)
       } catch (error) {
-        result.push("Unknown user error");
+        result.push('Unknown user error');
       }
     }
     return result;
@@ -67,7 +67,7 @@ export class ErrorsService {
 
   handleError(error: any, errorJson: any, status: number) {
     if (status == 0) {
-      this.setErrors(["Server unavailable"]);
+      this.setErrors(['Server unavailable']);
       this.setHidden(false);
     } else {
       this.setErrors(
